@@ -1,32 +1,68 @@
-# How to setup two-tier application deployment on kubernetes cluster
-## First setup kubernetes kubeadm cluster
-Use this repository to setup kubeadm https://github.com/LondheShubham153/kubestarter/blob/main/kubeadm_installation.md
+# Two-Tier Flask App (Dockerized)
 
-## SetUp
-- First clone the code to your machine
+A simple two-tier web application built using Flask and MySQL, fully containerized using Docker.
+
+---
+
+##  Architecture
+
+Client (Browser)
+        ↓
+Flask App (Container)
+        ↓
+MySQL Database (Container)
+
+---
+
+## Tech Stack
+
+-  Python (Flask)
+-  MySQL
+-  Docker
+-  HTML (Frontend)
+
+---
+
+##  Features
+
+- Add messages through UI
+- Store messages in MySQL database
+- Display stored messages on UI
+- Fully containerized setup
+
+---
+
+##  Run Locally (Docker)
+
+### Step 1: Create Network
 ```bash
-git clone https://github.com/LondheShubham153/two-tier-flask-app.git
-```
-- Move to k8s directory
-```bash
-cd two-tier-flask-app/k8s
-```
-- Now, execute below commands one by one
-```bash
-kubectl apply -f twotier-deployment.yml
-```
-```bash
-kubectl apply -f twotier-deployment-svc.yml
-```
-```bash
-kubectl apply -f mysql-deployment.yml
-```
-```bash
-kubectl apply -f mysql-deployment-svc.yml
-```
-```bash
-kubectl apply -f persistent-volume.yml
-```
-```bash
-kubectl apply -f persistent-volume-claim.yml
-```
+
+Step 2: Run MySQL Container
+
+docker run -d \
+  --name mysql-db \
+  --network my-network \
+  -e MYSQL_ROOT_PASSWORD=root \
+  -e MYSQL_DATABASE=testdb \
+  mysql:5.7
+
+  Step 3: Wait for MySQL
+
+  sleep 15
+
+  Step 4: Run Flask App
+
+  docker run -d \
+  --name flask-app \
+  --network my-network \
+  -p 5000:5000 \
+  -e MYSQL_HOST=mysql-db \
+  -e MYSQL_USER=root \
+  -e MYSQL_PASSWORD=root \
+  -e MYSQL_DB=testdb \
+  two-tier-flask-app
+
+  Access Application : http://localhost:5000
+
+
+
