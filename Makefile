@@ -19,7 +19,7 @@ ifeq ($(OS),Darwin)
 endif
 ifeq ($(OS),Windows_NT)
 	@echo "Building for Windows"
-	# Add Windows-specific build commands if you wish :P
+	# Add Windows-specific build commands if you wish :
 endif
 
 # Run target
