@@ -30,13 +30,7 @@ MySQL Database (Container)
 - Display stored messages on UI
 - Fully containerized setup
 
----
 
-##  Run Locally (Docker)
-
-### Step 1: Create Network
-```bash
-docker network create my-network
 
 
 
