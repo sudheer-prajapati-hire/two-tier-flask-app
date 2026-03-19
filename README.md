@@ -1,10 +1,10 @@
-# 🚀 Two-Tier Flask App (Dockerized)
+#  Two-Tier Flask App (Dockerized)
 
 A simple two-tier web application built using Flask and MySQL, fully containerized using Docker.
 
 ---
 
-## 🧱 Architecture
+##  Architecture
 
 Client (Browser)
         ↓
@@ -14,16 +14,16 @@ MySQL Database (Container)
 
 ---
 
-## ⚙️ Tech Stack
+##  Tech Stack
 
-- 🐍 Python (Flask)
-- 🛢️ MySQL
-- 🐳 Docker
-- 🌐 HTML (Frontend)
+-  Python (Flask)
+-  MySQL
+-  Docker
+-  HTML (Frontend)
 
 ---
 
-## ✨ Features
+##  Features
 
 - Add messages through UI
 - Store messages in MySQL database
@@ -32,7 +32,7 @@ MySQL Database (Container)
 
 ---
 
-## 🚀 Run Locally (Docker)
+##  Run Locally (Docker)
 
 ### Step 1: Create Network
 ```bash
